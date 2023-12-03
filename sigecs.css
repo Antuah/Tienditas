@@ -1,0 +1,159 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f5f5f5;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.borde {
+    cursor: pointer;
+    position: relative;
+    width: 200px;
+    height: 20px;
+}
+
+.borde i {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.borde:hover {
+    background-color: #e0e0e0;
+}
+
+#seleccionMensaje {
+    text-align: center;
+    color: #666;
+    margin-top: 10px;
+}
+
+#porcentaje {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+#guardar-container {
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#limpiarSeleccionIcon {
+    cursor: pointer;
+    text-align: center;
+    color: #e44d26;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#cancelar {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #e44d26;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#cancelar:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#select {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    font-size: 14px;
+}
+
+#selectTienda,
+#selectAno,
+#confirmarSeleccion {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    font-size: 14px;
+}
+
+th.categoria {
+    text-align: center;
+    background-color: #000 !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+th.mala {
+    text-align: center;
+    background-color: #000 !important;
+    color: #FF0000 !important;
+}
+
+th.regular {
+    text-align: center;
+    background-color: #000 !important;
+    color: #D49928 !important;
+}
+
+th.buena {
+    text-align: center;
+    background-color: #000 !important;
+    color: #E1D427 !important;
+}
+
+th.muy-buena {
+    text-align: center;
+    background-color: #000;
+    color: #13B210;
+}
+
+th.excelente {
+    text-align: center;
+    background-color: #000;
+    color: #2999ce;
+}
+
+@media only screen and (max-width: 600px) {
+
+    table,
+    th,
+    td {
+        font-size: 12px;
+    }
+}
