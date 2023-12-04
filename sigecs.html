@@ -14,6 +14,7 @@
 </head>
 
 <body>
+<div class="inline-container">
     <select id="selectTienda">
         <option value="" disabled selected>Seleccionar Tienda</option>
         <option value="tienda1">El paisano y los primos</option>
@@ -21,15 +22,19 @@
         <option value="tienda3">El paisano y los primos: return</option>
     </select>
 
+
     <select id="selectAno">
         <option value="" disabled selected>Seleccionar Año</option>
-        <option value="tienda1">El paisano y los primos</option>
-        <option value="tienda2">El paisano y los primos 2</option>
-        <option value="tienda3">El paisano y los primos: return</option>
+        <option value="anio1">2023</option>
+        <option value="anio2">2022</option>
+        <option value="anio3">2021</option>
     </select>
+    <button onclick="agregarAno()" class="button icon-container">
+        <i class="fa fa-plus"></i>
+    </button>
 
     <button id="confirmarSeleccion" onclick="confirmarSeleccion()">Confirmar Selección</button>
-
+</div>
     <h2>Encuesta de Calidad</h2>
 
     <table id="mi-tabla" >
@@ -110,3 +115,35 @@
             </tr>
         </tbody>
     </table>
+
+<div class="button-container">
+    <div class="inline-container">
+        <button onclick="limpiarSeleccion()" class="button icon-container">
+            <i class="fa fa-eraser"></i>
+        </button>
+        <label>Limpiar</label>
+
+        <button class="button icon-container">
+            <i class="fa fa-play"></i>
+        </button>
+        <label>Resumir</label>
+
+        <button onclick="cancel()" class="button icon-container">
+            <i class="fa fa-times"></i>
+        </button>
+        <label>Cancelar</label>
+
+        <div id="guardar-container" style="display: none">
+            <button class="button icon-container">
+                <i class="fa fa-save"></i>
+            </button>
+            <label>Guardar</label>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>
+

@@ -1,6 +1,7 @@
 const colors = ["#FF0000", "#2999ce", "#13B210", "#E1D427", "#D49928"];
 let colorIndex = 0;
 let selectedElements = 0;
+let selectedRows = new Set();
 
 // Evento al confirmar la selección
 function confirmarSeleccion(cell, newColorIndex) {
@@ -239,11 +240,9 @@ function limpiarTabla() {
     document.getElementById('porcentaje').textContent = '';
 }
 
-const cancelar = document.getElementById('cancelar');
 
-cancelar.addEventListener('click', () => {
-    console.log("cancelar1");
-    if (tabla.style.display === 'table') {
+function cancel() {
+    if (selectedElements > 0) {
         Swal.fire({
             title: 'Confirmación',
             text: '¿Estás seguro que deseas cancelar?',
@@ -259,27 +258,46 @@ cancelar.addEventListener('click', () => {
             },
         }).then((result) => {
             if (result.isConfirmed) {
-                console.log("cancelar2");
-                // Restablecer el estado de las celdas de la tabla
-                const celdas = tabla.querySelectorAll('.borde');
-                celdas.forEach((celda) => {
-                    celda.style.backgroundColor = ''; // Restablecer el color de fondo
-                    const icono = celda.querySelector('.fas');
-                    if (icono) {
-                        icono.style.display = 'none'; // Ocultar el icono de check
-                    }
-                });
+                const selectedRowsArray = Array.from(selectedRows);
+                for (const row of selectedRowsArray) {
+                    const selectedCells = row.querySelectorAll('.borde');
+                    selectedCells.forEach((cell) => {
+                        resetCell(cell);
+                    });
+                }
 
+
+                selectedRows.clear();
+                selectedElements = 0;
+
+                const percentageCell = document.getElementById('porcentaje');
+                const selectTienda = document.getElementById('selectTienda');
+                const selectAno = document.getElementById('selectAno');
+                selectTienda.value = "";
+                selectAno.value = "";
+                percentageCell.textContent = '';
+                document.getElementById('guardar-container').style.display = 'none';
                 document.getElementById('porcentaje').textContent = '';
-
-                tabla.style.display = 'none';
-                seleccionMensaje.style.display = 'block';
                 select.disabled = false;
                 select.selectedIndex = 0;
-
-
             }
         });
     }
-});
+}
+
+function agregarAno() {
+    const nuevoAno = prompt("Ingrese el nuevo año:");
+
+    if (nuevoAno) {
+        const selectAno = document.getElementById('selectAno');
+        const nuevaOpcion = document.createElement('option');
+        nuevaOpcion.value = 'nuevoAno';  // Puedes personalizar este valor según tus necesidades
+        nuevaOpcion.text = nuevoAno;
+        selectAno.add(nuevaOpcion);
+
+        // También puedes seleccionar automáticamente el nuevo año si lo prefieres
+        selectAno.value = 'nuevoAno';
+    }
+}
+
 

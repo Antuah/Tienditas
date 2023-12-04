@@ -37,7 +37,9 @@ tbody tr:hover {
     cursor: pointer;
     position: relative;
     width: 200px;
+    /* Puedes ajustar este valor según tus necesidades */
     height: 20px;
+    /* Puedes ajustar este valor según tus necesidades */
 }
 
 .borde i {
@@ -80,22 +82,8 @@ tbody tr:hover {
     margin-top: 10px;
 }
 
-#cancelar {
-    display: block;
-    margin: 10px auto;
-    padding: 10px 20px;
-    background-color: #e44d26;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-}
 
-#cancelar:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
+
 
 #select {
     display: block;
@@ -157,3 +145,224 @@ th.excelente {
         font-size: 12px;
     }
 }
+
+/* Estilo para el botón Agregar Año */
+button.fa-plus {
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Color del texto blanco */
+    border: none;
+    padding: 10px 20px; /* Ajustar según sea necesario */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Estilo para el botón Confirmar Selección */
+button#confirmarSeleccion {
+    background-color: #008CBA; /* Color de fondo azul */
+    color: white; /* Color del texto blanco */
+    border: none;
+    padding: 10px 20px; /* Ajustar según sea necesario */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.button-add {
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Texto en color blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Relleno interno */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none; /* Sin decoración de texto */
+    display: inline-block; /* Mostrar como un elemento en línea */
+    font-size: 16px; /* Tamaño de la fuente */
+    margin: 4px 2px; /* Margen exterior */
+    cursor: pointer; /* Cursor al pasar sobre el botón */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+/* Estilos para el botón de confirmar */
+#confirmarSeleccion {
+    background-color: #008CBA; /* Color de fondo azul */
+    color: white; /* Texto en color blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Relleno interno */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none; /* Sin decoración de texto */
+    display: inline-block; /* Mostrar como un elemento en línea */
+    font-size: 16px; /* Tamaño de la fuente */
+    margin: 4px 2px; /* Margen exterior */
+    cursor: pointer; /* Cursor al pasar sobre el botón */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+/* Estilos para los selectores de año y tienda */
+#selectAno,
+#selectTienda {
+    width: 200px; /* Ancho del selector */
+    padding: 10px; /* Relleno interno */
+    margin: 10px 0; /* Margen exterior */
+    border: 1px solid #ccc; /* Borde delgado con color gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+/* Estilos para las opciones de los selectores */
+select option {
+    background-color: #f9f9f9; /* Color de fondo para las opciones */
+    color: #333; /* Color del texto para las opciones */
+}
+
+/* Estilo para contenedor de elementos en la misma línea */
+.inline-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Estilos específicos para los elementos en la misma línea */
+#selectAno,
+#selectTienda,
+.button-add,
+#confirmarSeleccion {
+    margin: 0;
+}
+
+#selectAno,
+#selectTienda {
+    flex: 1; /* Los selectores ocuparán todo el espacio disponible */
+    margin-right: 10px; /* Espaciado entre selectores y botones */
+}
+
+.button-add,
+#confirmarSeleccion {
+    flex-shrink: 0; /* Evita que los botones se contraigan */
+}
+.button-add {
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Texto en color blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Relleno interno */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none; /* Sin decoración de texto */
+    display: inline-block; /* Mostrar como un elemento en línea */
+    font-size: 16px; /* Tamaño de la fuente */
+    margin: 4px 2px; /* Margen exterior */
+    cursor: pointer; /* Cursor al pasar sobre el botón */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+.button-add:hover {
+    background-color: #45a049; /* Cambia el color de fondo al pasar el mouse */
+}
+
+/* Estilos para los botones de Cancelar, Limpiar y Resumir */
+/* Ajustar espacio entre botones y etiquetas */
+.inline-container > label,
+.button.icon-container {
+    margin-right: 10px;
+}
+
+/* Estilos para los botones de Cancelar, Limpiar y Resumir */
+.button.icon-container {
+    background-color: #e44d26; /* Color de fondo rojo oscuro */
+    color: #fff; /* Texto en color blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Relleno interno */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none; /* Sin decoración de texto */
+    display: inline-block; /* Mostrar como un elemento en línea */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cursor al pasar sobre el botón */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+/* Estilos para el botón de Cancelar */
+#cancelar {
+    background-color: #e44d26; /* Color de fondo rojo oscuro */
+    color: #fff; /* Texto en color blanco */
+}
+
+/* Estilos para el botón de Limpiar */
+.button.icon-container:first-child {
+    background-color: #2ecc71; /* Color de fondo verde */
+    color: #fff; /* Texto en color blanco */
+}
+
+/* Estilos para el botón de Resumir */
+.button.icon-container:nth-child(3) {
+    background-color: #3498db; /* Color de fondo azul */
+    color: #fff; /* Texto en color blanco */
+}
+
+/* Ajustar margen entre botones */
+.button.icon-container {
+    margin-right: 10px;
+}
+
+/* Ajustar espacio entre botones y etiquetas */
+.inline-container > label {
+    margin-left: 10px;
+}
+
+/* Estilo para el contenedor de botones */
+.button-container {
+    background-color: #fff; /* Color de fondo blanco */
+    padding: 10px; /* Ajustar según sea necesario */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Ajustar espacio entre botones y etiquetas dentro del contenedor */
+.button-container > .inline-container > label,
+.button-container > .inline-container > .button.icon-container {
+    margin-right: 10px;
+}
+
+/* Estilos para los botones de Cancelar, Limpiar y Resumir */
+.button.icon-container {
+    background-color: #e44d26; /* Color de fondo rojo oscuro */
+    color: #fff; /* Texto en color blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Relleno interno */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none; /* Sin decoración de texto */
+    display: inline-block; /* Mostrar como un elemento en línea */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cursor al pasar sobre el botón */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+/* Estilos para el botón de Cancelar */
+#cancelar {
+    background-color: #e44d26; /* Color de fondo rojo oscuro */
+    color: #fff; /* Texto en color blanco */
+}
+
+/* Estilos para el botón de Limpiar */
+.button.icon-container:first-child {
+    background-color: #2ecc71; /* Color de fondo verde */
+    color: #fff; /* Texto en color blanco */
+}
+
+/* Estilos para el botón de Resumir */
+.button.icon-container:nth-child(3) {
+    background-color: #3498db; /* Color de fondo azul */
+    color: #fff; /* Texto en color blanco */
+}
+
+/* Ajustar margen entre botones dentro del contenedor */
+.button-container > .inline-container > .button.icon-container {
+    margin-right: 10px;
+}
+
+
+
