@@ -1,5 +1,4 @@
-const colors = ["#FF0000", "#2999ce", "#13B210", "#E1D427", "#D49928"];
-let colorIndex = 0;
+const colors = ["#FF0000", "#D49928", "#E1D427", "#13B210", "#2999ce"];let colorIndex = 0;
 let selectedElements = 0;
 let selectedRows = new Set();
 
@@ -71,6 +70,7 @@ function resetRowColors(row) {
     }
 }
 
+
 function calculateOverallPercentage() {
     const allRows = document.querySelectorAll('tbody tr');
     let total = 0;
@@ -95,28 +95,16 @@ function calculateOverallPercentage() {
     if (selectedCount === 8) {
         percentageCell.textContent = (overallPercentage * 100).toFixed(2) + '%';
 
-        guardarContainer.style.display = 'block';
-        guardarContainer.classList.add('appear');
-    } else {
-        percentageCell.textContent = '';
-
-
-        guardarContainer.style.display = 'none';
-        guardarContainer.classList.remove('appear');
-    }
-    if (selectedCount === 8) {
-        percentageCell.textContent = (overallPercentage * 100).toFixed(2) + '%';
-
         // Set background color based on percentage value
         if (overallPercentage >= 0 && overallPercentage <= 0.60) {
             percentageCell.style.backgroundColor = '#FF0000';
-        } else if (overallPercentage > 0.60 && overallPercentage < 0.70) {
+        } else if (overallPercentage > 0.60 && overallPercentage <= 0.70) {
             percentageCell.style.backgroundColor = '#D49928';
-        } else if (overallPercentage >= 0.70 && overallPercentage < 0.80) {
+        } else if (overallPercentage > 0.70 && overallPercentage <= 0.80) {
             percentageCell.style.backgroundColor = '#E1D427';
-        } else if (overallPercentage >= 0.80 && overallPercentage < 0.90) {
+        } else if (overallPercentage > 0.80 && overallPercentage <= 0.90) {
             percentageCell.style.backgroundColor = '#13B210';
-        } else if (overallPercentage >= 0.90 && overallPercentage <= 1) {
+        } else if (overallPercentage > 0.90 && overallPercentage <= 1) {
             percentageCell.style.backgroundColor = '#2999ce';
         }
 
@@ -130,7 +118,6 @@ function calculateOverallPercentage() {
         guardarContainer.classList.remove('appear');
     }
 }
-
 
 // Function to get color value from color string
 function getColorValue(colorString) {
@@ -188,12 +175,12 @@ function limpiarSeleccion() {
 
                 const percentageCell = document.getElementById('porcentaje');
                 percentageCell.textContent = '';
+                percentageCell.style.backgroundColor = ''; // Reset background color
                 document.getElementById('guardar-container').style.display = 'none';
             }
         });
     }
 }
-
 
 function resetCell(cell) {
     cell.style.backgroundColor = "";
