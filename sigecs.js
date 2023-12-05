@@ -1,4 +1,4 @@
-const colors = ["#FF0000", "#ffb03c", "#E1D427", "#13B210", "#2999ce"];let colorIndex = 0;
+const colors = ["#FF0000", "#FFB03C", "#E1D427", "#13B210", "#2999ce"];let colorIndex = 0;
 let selectedElements = 0;
 let selectedRows = new Set();
 
@@ -53,7 +53,7 @@ function confirmarSeleccion(cell, newColorIndex) {
         // Mostrar mensaje de error o indicar que ambas selecciones son necesarias
         Swal.fire({
             title: 'Error',
-            text: 'Por favor, selecciona tienda y año antes de confirmar.',
+            text: 'Por favor, selecciona tienda y encuesta antes de confirmar.',
             icon: 'error',
             customClass: {
                 title: 'my-swal-title',
@@ -99,7 +99,7 @@ function calculateOverallPercentage() {
         if (overallPercentage >= 0 && overallPercentage <= 0.60) {
             percentageCell.style.backgroundColor = '#FF0000';
         } else if (overallPercentage > 0.60 && overallPercentage <= 0.70) {
-            percentageCell.style.backgroundColor = '#ffb03c';
+            percentageCell.style.backgroundColor = '#FFB03C';
         } else if (overallPercentage > 0.70 && overallPercentage <= 0.80) {
             percentageCell.style.backgroundColor = '#E1D427';
         } else if (overallPercentage > 0.80 && overallPercentage <= 0.90) {
@@ -138,7 +138,7 @@ function getColorValue(color) {
             return 75;
         case "rgb(225, 212, 39)":   // #E1D427
             return 50;
-        case "rgb(255,176,60)": // #D49928
+        case "rgb(255,176,60)": //
             return 25;
         default:
             return 0;
