@@ -1,4 +1,4 @@
-const colors = ["#FF0000", "#FFB03C", "#E1D427", "#13B210", "#2999ce"];let colorIndex = 0;
+const colors = ["#FF0000", "#FFB03c", "#E1D427", "#13B210", "#2999ce"];let colorIndex = 0;
 let selectedElements = 0;
 let selectedRows = new Set();
 
@@ -99,7 +99,7 @@ function calculateOverallPercentage() {
         if (overallPercentage >= 0 && overallPercentage <= 0.60) {
             percentageCell.style.backgroundColor = '#FF0000';
         } else if (overallPercentage > 0.60 && overallPercentage <= 0.70) {
-            percentageCell.style.backgroundColor = '#FFB03C';
+            percentageCell.style.backgroundColor = '#FFB03c';
         } else if (overallPercentage > 0.70 && overallPercentage <= 0.80) {
             percentageCell.style.backgroundColor = '#E1D427';
         } else if (overallPercentage > 0.80 && overallPercentage <= 0.90) {
@@ -119,14 +119,6 @@ function calculateOverallPercentage() {
     }
 }
 
-// Function to get color value from color string
-function getColorValue(colorString) {
-    // You may need to implement this function based on your specific requirements
-    // For simplicity, assuming that the color string is in the format "rgb(x, y, z)"
-    const rgbArray = colorString.match(/\d+/g).map(Number);
-    return rgbArray.reduce((acc, val) => acc + val, 0);
-}
-
 
 function getColorValue(color) {
     switch (color) {
@@ -138,7 +130,7 @@ function getColorValue(color) {
             return 75;
         case "rgb(225, 212, 39)":   // #E1D427
             return 50;
-        case "rgb(255,176,60)": //
+        case "rgb(255, 176, 60)": // #ffb03c
             return 25;
         default:
             return 0;
