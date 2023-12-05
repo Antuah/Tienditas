@@ -86,11 +86,20 @@ function calculateOverallPercentage() {
             }
         });
     });
+    const guardarContainer = document.getElementById('guardar-container');
+    const guardarButton = guardarContainer.querySelector('.button.icon-container4');
+
+    if (selectedElements === 8) {
+        // Enable the "Guardar" button
+        guardarButton.disabled = false;
+    } else {
+        // Disable the "Guardar" button
+        guardarButton.disabled = true;
+    }
 
     const overallPercentage = selectedCount === 8 ? total / (8 * 100) : 0;
-
     const percentageCell = document.getElementById('porcentaje');
-    const guardarContainer = document.getElementById('guardar-container');
+
 
     if (selectedCount === 8) {
         percentageCell.textContent = (overallPercentage * 100).toFixed(2) + '%';
@@ -114,8 +123,6 @@ function calculateOverallPercentage() {
         percentageCell.textContent = '';
         percentageCell.style.backgroundColor = ''; // Reset background color
 
-        guardarContainer.style.display = 'none';
-        guardarContainer.classList.remove('appear');
     }
 }
 
@@ -168,7 +175,7 @@ function limpiarSeleccion() {
                 const percentageCell = document.getElementById('porcentaje');
                 percentageCell.textContent = '';
                 percentageCell.style.backgroundColor = ''; // Reset background color
-                document.getElementById('guardar-container').style.display = 'none';
+
             }
         });
     }
@@ -221,7 +228,6 @@ function limpiarTabla() {
 
 
 function cancel() {
-    if (selectedElements > 0) {
         Swal.fire({
             title: 'Confirmación',
             text: '¿Estás seguro que deseas cancelar?',
@@ -250,18 +256,15 @@ function cancel() {
                 selectedElements = 0;
 
                 const percentageCell = document.getElementById('porcentaje');
+                percentageCell.textContent = '';
+                percentageCell.style.backgroundColor = ''; // Reset background color
                 const selectTienda = document.getElementById('selectTienda');
                 const selectAno = document.getElementById('selectAno');
                 selectTienda.value = "";
                 selectAno.value = "";
-                percentageCell.textContent = '';
-                document.getElementById('guardar-container').style.display = 'none';
-                document.getElementById('porcentaje').textContent = '';
-                select.disabled = false;
                 select.selectedIndex = 0;
             }
         });
-    }
 }
 
 function agregarAno() {
